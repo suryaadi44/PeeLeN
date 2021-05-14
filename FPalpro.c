@@ -4,7 +4,6 @@
 
 void mainMenu();
 void user();
-void usage();
 void tx();
 void setting();
 
@@ -101,49 +100,17 @@ void user() {
 	} while (pil != 5 && lanjut == 1);
 }
 
-void usage() {
-	int pil, lanjut = 1;
-	do {
-		printf(" --> DATA PEMAKAIAN");
-		printf("==================================================");
-		printf(" --> 1. Tampilkan Data Penggunaan");
-		printf(" --> 2. Tambah Penggunaan");
-		printf(" --> 3. Kembali");
-		printf("==================================================");
-		printf(" --> Pilih menu : ");
-		scanf("%d", &pil);
-		printf("==================================================");
-
-		switch (pil) {
-		case 1:
-
-			lanjut = pause();
-			break;
-		case 2:
-
-			break;
-		case 3:
-
-			break;
-		case 4:
-
-			break;
-		case 5:
-			break;
-		default:
-			break;
-		}
-	} while (pil != 3 && lanjut == 1);
-}
 
 void tx() {
 	int pil, lanjut = 1;
 	do {
 		printf(" --> DATA TRANSAKSI");
 		printf("==================================================");
-		printf(" --> 1. Tampilkan Data Transaksi");
-		printf(" --> 2. Pembayaran Tagihan");
-		printf(" --> 3. Kembali");
+		printf(" --> 1. Tampilkan Data Penggunaan");
+		printf(" --> 2. Tambah Penggunaan");
+		printf(" --> 3. Status Tagihan");
+		printf(" --> 4. Pembayaran Tagihan");
+		printf(" --> 5. Kembali");
 		printf("==================================================");
 		printf(" --> Pilih menu : ");
 		scanf("%d", &pil);
@@ -159,6 +126,7 @@ void tx() {
 			break;
 		case 3:
 
+			lanjut = pause();
 			break;
 		case 4:
 
@@ -197,8 +165,6 @@ void setting() {
 			break;
 		case 4:
 
-			break;
-		case 5:
 			break;
 		default:
 			break;
