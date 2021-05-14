@@ -1,2 +1,37 @@
-# PeeLeN
-Aplikasi Pengelolaan Data Pengguna Listrik Sederhana 
+# **PeeLeN**
+
+```
+ /$$$$$$$  /$$$$$$$$       /$$$$$$$$ /$$             /$$$$$$$$ /$$   /$$  
+| $$__  $$| $$_____/      | $$_____/| $$            | $$_____/| $$$ | $$  
+| $$    $$| $$            | $$      | $$            | $$      | $$$$| $$  
+| $$$$$$$/| $$$$$         | $$$$$   | $$            | $$$$$   | $$ $$ $$  
+| $$____/ | $$__/         | $$__/   | $$            | $$__/   | $$  $$$$  
+| $$      | $$            | $$      | $$            | $$      | $$   $$$  
+| $$      | $$$$$$$$      | $$$$$$$$| $$$$$$$$      | $$$$$$$$| $$    $$  
+|__/      |________/      |________/|________/      |________/|__/   __/  
+```
+
+---
+Aplikasi Pengelolaan Data Pengguna Listrik Sederhana Sebagai Final Project Praktikum Algoritma dan Pemrograman Semester 2.
+
+## **Cara Menjalankan Program**
+
+### 1. Vscode dan lainnya yang berbasis terminal
+
+>Jalankan perintah berikut pada terminal :
+>
+>```
+>cd "d:\Semester II\Praktikum Algoritma & Pemrograman\PeeLeN\" ; if ($?) { gcc "FPalpro.c" "lib/first.c" "lib/login_func.c" "lib/mainLogic.c" -o "FPalpro" } ; if ($?) { & ".\FPalpro" }
+>```
+>
+>*-Ubah chnage directory menjadi directory menyimpan code.*
+>
+>*-Tambah list .c file jika ada penambahan file lib baru, contoh :* **"lib/first.c"**  
+
+### 2. Dev C++
+>Ikuti Langkah-Langkah Berikut:
+>
+>1. Buat Blank Project.
+>2. Tambahkan FPalpro.c ke Project
+>3. Tambah Folder Baru di Project
+>4. Tambahkan Semuai Dalam Folder Lib ke Folder Yang Telah Dibuat

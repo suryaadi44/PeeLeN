@@ -27,56 +27,56 @@ void mainMenu() {
 	int pil;
 
 	do {
-		printf("==================================================");
-		printf("|    APLIKASI PENGELOLA DATA PENGGUNA LISTRIK    |");
-		printf("==================================================");
-		printf("|                  MENU UTAMA                    |");
-		printf("==================================================");
-		printf(" --> 1. Pelanggan");
-		printf(" --> 2. Data Pemakaian");
-		printf(" --> 3. Transaksi");
-		printf(" --> 4. Pengaturan");
-		printf(" --> 5. Keluar");
-		printf("==================================================");
+		clear();
+		header();
+		printf("==============================================================================\n");
+		printf("|                  APLIKASI PENGELOLA DATA PENGGUNA LISTRIK                  |\n");
+		printf("==============================================================================\n");
+		printf("|                                MENU UTAMA                                  |\n");
+		printf("==============================================================================\n");
+		printf(" --> 1. Pelanggan\n");
+		printf(" --> 2. Transaksi\n");
+		printf(" --> 3. Pengaturan\n");
+		printf(" --> 4. Keluar\n");
+		printf("==============================================================================\n");
 		printf(" --> Pilih menu : ");
 		scanf("%d", &pil);
-		printf("==================================================");
+		printf("==============================================================================\n");
 
 		switch (pil) {
 		case 1:
 			user();
 			break;
 		case 2:
-			usage();
-			break;
-		case 3:
 			tx();
 			break;
-		case 4:
+		case 3:
 			setting();
 			break;
-		case 5:
+		case 4:
 			break;
 		default:
 			break;
 		}
-	} while (pil != 5);
+	} while (pil != 4);
 }
 
 void user() {
 	int pil, lanjut = 1;
 	do {
-		printf(" --> PELANGGAN");
-		printf("==================================================");
-		printf(" --> 1. Tampilkan Pelanggan");
-		printf(" --> 2. Tambah Pelanggan");
-		printf(" --> 3. Ubah Data Pelanggan");
-		printf(" --> 4. Hapus Pelanggan");
-		printf(" --> 5. Kembali");
-		printf("==================================================");
+		clear();
+		header();
+		printf(" --> PELANGGAN\n");
+		printf("==============================================================================\n");
+		printf(" --> 1. Tampilkan Pelanggan\n");
+		printf(" --> 2. Tambah Pelanggan\n");
+		printf(" --> 3. Ubah Data Pelanggan\n");
+		printf(" --> 4. Hapus Pelanggan\n");
+		printf(" --> 5. Kembali\n");
+		printf("==============================================================================\n");
 		printf(" --> Pilih menu : ");
 		scanf("%d", &pil);
-		printf("==================================================");
+		printf("==============================================================================\n");
 
 		switch (pil) {
 		case 1:
@@ -104,17 +104,19 @@ void user() {
 void tx() {
 	int pil, lanjut = 1;
 	do {
+		clear();
+		header();
 		printf(" --> DATA TRANSAKSI");
-		printf("==================================================");
-		printf(" --> 1. Tampilkan Data Penggunaan");
-		printf(" --> 2. Tambah Penggunaan");
-		printf(" --> 3. Status Tagihan");
-		printf(" --> 4. Pembayaran Tagihan");
-		printf(" --> 5. Kembali");
-		printf("==================================================");
+		printf("==============================================================================\n");
+		printf(" --> 1. Tampilkan Data Penggunaan\n");
+		printf(" --> 2. Tambah Penggunaan\n");
+		printf(" --> 3. Status Tagihan\n");
+		printf(" --> 4. Pembayaran Tagihan\n");
+		printf(" --> 5. Kembali\n");
+		printf("==============================================================================\n");
 		printf(" --> Pilih menu : ");
 		scanf("%d", &pil);
-		printf("==================================================");
+		printf("==============================================================================\n");
 
 		switch (pil) {
 		case 1:
@@ -142,16 +144,18 @@ void tx() {
 void setting() {
 	int pil;
 	do {
+		clear();
+		header();
 		printf(" --> PENGATURAN");
-		printf("==================================================");
-		printf(" --> 1. Ganti Passowrd");
-		printf(" --> 2. Buat Akun Baru");
-		printf(" --> 3. Hapus Akun");
-		printf(" --> 4. Kembali");
-		printf("==================================================");
+		printf("==============================================================================\n");
+		printf(" --> 1. Ganti Password\n");
+		printf(" --> 2. Buat Akun Baru\n");
+		printf(" --> 3. Hapus Akun\n");
+		printf(" --> 4. Kembali\n");
+		printf("==============================================================================\n");
 		printf(" --> Pilih menu : ");
 		scanf("%d", &pil);
-		printf("==================================================");
+		printf("==============================================================================\n");
 
 		switch (pil) {
 		case 1:

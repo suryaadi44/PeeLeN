@@ -18,7 +18,7 @@ void accCheck() {
     f = fopen("./db_user/name_pass.csv", "a+");
     rek = fopen("./db_cust/data_cust.csv", "a+");
 
-    int baris = Hbaris("./db_user/name_pass.csv");
+    int baris = countLine("./db_user/name_pass.csv");
 
     if (baris == 0) {
         fprintf(f, "%d,%s,%s\n", 1, "admin", "admin");

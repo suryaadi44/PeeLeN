@@ -1,3 +1,13 @@
+# Database
+*.csv
+
+# Dev C++ Files
+*.dev
+*.layout
+
+# Dev C++ Makefile
+*.Win
+
 # Prerequisites
 *.d
 

@@ -24,6 +24,7 @@ typedef struct account {
 
 void header();
 int pause();
+int countLine(char file[]);
 void clear();
 
 extern int session;
