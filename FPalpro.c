@@ -138,7 +138,7 @@ void tx() {
 		default:
 			break;
 		}
-	} while (pil != 3 && lanjut == 1);
+	} while (pil != 5 && lanjut == 1);
 }
 
 void setting() {
