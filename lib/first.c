@@ -15,10 +15,10 @@ void directoryCheck() {
 void accCheck() {
     FILE* f, * rek;
 
-    f = fopen("./db_user/name_pass.csv", "a+");
-    rek = fopen("./db_cust/data_cust.csv", "a+");
+    f = fopen(USER_DB_PATH, "a+");
+    rek = fopen(CUST_DB_PATH, "a+");
 
-    int baris = countLine("./db_user/name_pass.csv");
+    int baris = countLine(USER_DB_PATH);
 
     if (baris == 0) {
         fprintf(f, "%d,%s,%s\n", 1, "admin", "admin");

@@ -6,6 +6,11 @@
 #include <string.h>
 #include <time.h> 
 
+#define USER_DB_PATH "./db_user/name_pass.csv"
+#define TEMP_USER_DB_PATH "./db_user/temp.csv"
+#define CUST_DB_PATH "./db_cust/data_cust.csv"
+#define TEMP_CUST_DB_PATH "./db_cust/temp.csv"
+
 struct tm* waktu;
 
 typedef struct customer {
@@ -30,4 +35,4 @@ void clear();
 extern int session;
 extern int sessionRank;
 
-#endif //MAINLOGIC_H_
+#endif
