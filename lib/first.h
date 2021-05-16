@@ -7,6 +7,6 @@
 #include "mainLogic.h"
 
 void directoryCheck();
-void accCheck();
+void fileCheck();
 
 #endif

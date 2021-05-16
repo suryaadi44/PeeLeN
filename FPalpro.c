@@ -1,6 +1,7 @@
+#include "lib/first.h" 
 #include "lib/mainLogic.h"
 #include "lib/acc_func.h"
-#include "lib/first.h" 
+#include "lib/cust_func.h"
 
 void mainMenu();
 void user();
@@ -11,7 +12,7 @@ int main() {
 	int cek;
 
 	directoryCheck();
-	accCheck();
+	fileCheck();
 
 	clear();
 	header();
@@ -89,17 +90,17 @@ void user() {
 
 		switch (pil) {
 		case 1:
-
+			viewCust();
 			lanjut = pause();
 			break;
 		case 2:
-
+			addCust();
 			break;
 		case 3:
-
+			editCust();
 			break;
 		case 4:
-
+			delCust();
 			break;
 		case 5:
 			break;

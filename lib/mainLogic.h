@@ -10,16 +10,19 @@
 #define TEMP_USER_DB_PATH "./db_user/temp.csv"
 #define CUST_DB_PATH "./db_cust/data_cust.csv"
 #define TEMP_CUST_DB_PATH "./db_cust/temp.csv"
+#define RATE_PATH "./config/config.csv"
+#define TEMP_RATE_PATH "./config/temp.csv"
 
 struct tm* waktu;
 
 typedef struct customer {
-    int id;
-    long noPelanggan;
+    long id;
     char namaDepan[20];
     char namaBelakang[20];
-    long usage;
-    float rate;
+    char address[70];
+    char telp[15];
+    float usage;
+    int price;
 } customer;
 
 typedef struct account {
@@ -27,6 +30,12 @@ typedef struct account {
     char uname[20];
     char pass[20];
 }account;
+
+typedef struct rate {
+    int id;
+    int limit;
+    int perKWH;
+} rate;
 
 void header();
 int pause();

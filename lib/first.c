@@ -10,19 +10,34 @@ void directoryCheck() {
     if (stat("db_user", &st) == -1) {
         mkdir("db_user");
     }
+
+    if (stat("config", &st) == -1) {
+        mkdir("config");
+    }
 }
 
-void accCheck() {
-    FILE* f, * rek;
+void fileCheck() {
+    FILE* userDB, *custDB, *rate;
 
-    f = fopen(USER_DB_PATH, "a+");
-    rek = fopen(CUSTOMER_DB_PATH, "a+");
+    userDB = fopen(USER_DB_PATH, "a+");
+    custDB = fopen(CUST_DB_PATH, "a+");
+    rate = fopen(RATE_PATH, "a+");
 
-    int baris = countLine("./db_user/name_pass.csv");
 
-    if (baris == 0) {
-        fprintf(f, "%d,%s,%s\n", 1, "admin", "admin");
+    int baris = countLine(USER_DB_PATH);
+    if (baris == 0) 
+        fprintf(userDB, "1,admin,admin\n");
+    
+    baris = countLine(RATE_PATH);
+    if (baris == 0){
+        fprintf(rate, "1,450,200\n");
+        fprintf(rate, "2,900,1400\n");
+        fprintf(rate, "3,1300,1600\n");
+        fprintf(rate, "4,2200,1900\n");
+        fprintf(rate, "5,3100,2300\n");
     }
-    fclose(rek);
-    fclose(f);
+        
+    fclose(userDB);
+    fclose(custDB);
+    fclose(rate);
 }

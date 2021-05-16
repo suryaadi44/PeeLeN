@@ -54,10 +54,10 @@ void addAcc() {
     printf("==============================================================================\n");
     printf("                         Masukan Data untuk Akun Baru                         \n");
     printf("==============================================================================\n");
-    printf("Username : ");
+    printf(" Username : ");
     fflush(stdin);
     scanf("%[^\n]%*c", acc.uname);
-    printf("Password : ");
+    printf(" Password : ");
     fflush(stdin);
     scanf("%[^\n]%*c", acc.pass);
 
