@@ -1,5 +1,5 @@
 #include "lib/mainLogic.h"
-#include "lib/login_func.h"
+#include "lib/acc_func.h"
 #include "lib/first.h" 
 
 void mainMenu();
@@ -9,16 +9,20 @@ void setting();
 
 int main() {
 	int cek;
-	clear();
-
+	
 	directoryCheck();
 	accCheck();
+
+	clear();
 	header();
 
-	if (session == -1) cek = login();
+	if (session == -1) 
+		cek = login();
 
-	if (cek == 1 || session != -1) mainMenu();
-	else printf("Username atau Password Salah!\n");
+	if (cek) 
+		mainMenu();
+	else 
+		printf("Username atau Password Salah!\n");
 
 	return 0;
 }
@@ -162,7 +166,7 @@ void setting() {
 
 			break;
 		case 2:
-
+			addAcc();
 			break;
 		case 3:
 
