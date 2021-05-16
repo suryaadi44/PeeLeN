@@ -1,8 +1,5 @@
 #include "acc_func.h" 
 
-#define USER_DB_PATH "./db_user/name_pass.csv"
-#define TEMP_USER_DB_PATH "./db_user/temp.csv"
-
 int login() {
     FILE* database;
     account acc;
@@ -54,7 +51,7 @@ void addAcc() {
     }
 
     printf(" --> BUAT AKUN BARU \n");
-	printf("==============================================================================\n");
+    printf("==============================================================================\n");
     printf("                         Masukan Data untuk Akun Baru                         \n");
     printf("==============================================================================\n");
     printf("Username : ");
@@ -67,24 +64,137 @@ void addAcc() {
     while (rank != 'y' && rank != 'n') {
         printf("\nJadikan User Sebagai admin? (y/n) : ");
         fflush(stdin);
-        scanf("%d", &rank);
+        scanf("%c", &rank);
     }
-    
-    if(rank == 'y')
+
+    if (rank == 'y')
         acc.rank = 1;
-    else 
+    else
         acc.rank = 2;
 
     fprintf(database, "%d,%s,%s\n", acc.rank, acc.uname, acc.pass);
+
+    fclose(database);
 }
 
-void delAcc(){
-    FILE* database, *tempFile;
+void delAcc() {
+    FILE* database, * tempFile;
     account acc;
     char rank;
 
+    int max = countLine(USER_DB_PATH);
+    int del;
+
     database = fopen(USER_DB_PATH, "a+");
-    tempFile = fopen(TEMP_USER_DB_PATH, "a+");
+    tempFile = fopen(TEMP_USER_DB_PATH, "w");
+
     clear();
     header();
+
+    if (sessionRank != 1) {
+        printf("Anda tidak memiliki ijin untuk mengakses menu ini");
+        return;
+    }
+
+    printf(" --> HAPUS AKUN \n");
+    printf("==============================================================================\n");
+    viewAcc();
+    printf("\n Pilih ID Akun yang akan Dihapus : ");
+    scanf("%d", &del);
+
+    while (del < 1 && del > max) {
+        printf("\n Pilihan Tidak Tersedia");
+        printf("\n Pilih ID Akun yang akan Dihapus : ");
+        scanf("%d", &del);
+    }
+
+    for (int i = 0; i < max; i++) {
+        if (i != (del - 1)) {
+            fscanf(database, "%d,%[^,],%[^\n]", &acc.rank, acc.uname, acc.pass);
+            fprintf(tempFile, "%d,%s,%s\n", acc.rank, acc.uname, acc.pass);
+        }
+    }
+
+    fclose(database);
+    fclose(tempFile);
+
+    remove(USER_DB_PATH);
+    rename(TEMP_USER_DB_PATH, USER_DB_PATH);
+}
+
+void accPassword() {
+    FILE* database, * tempFile;
+    account acc;
+    char newUser[20];
+    char newPassword[20];
+
+    int max = countLine(USER_DB_PATH);
+    int accID;
+
+    database = fopen(USER_DB_PATH, "a+");
+    tempFile = fopen(TEMP_USER_DB_PATH, "w");
+
+    clear();
+    header();
+
+    printf(" --> GANTI PASSWORD \n");
+    printf("==============================================================================\n");
+    if (sessionRank != 1) {
+        printf("\n Masukan Password Baru");
+        printf("\n Password : ");
+        scanf("\n");
+        scanf("%[^\n]%*c", newPassword);
+        accID = session;
+    } else {
+        viewAcc();
+        printf("\n Pilih ID Akun yang akan Diganti Password : ");
+        scanf("%d", &accID);
+
+        while (accID < 1 && accID > max) {
+            printf("\n Pilihan Tidak Tersedia");
+            printf("\n Pilih ID Akun yang akan Dihapus : ");
+            scanf("%d", &accID);
+        }
+        accID -= 1;
+
+        printf("\n Masukan Password Baru");
+        printf("\n Password : ");
+        scanf("\n");
+        scanf("%[^\n]%*c", newPassword);
+
+    }
+
+
+    for (int i = 0; i < max; i++) {
+        fscanf(database, "%d,%[^,],%[^\n]", &acc.rank, acc.uname, acc.pass);
+        if (i == accID) {
+            fprintf(tempFile, "%d,%s,%s\n", acc.rank, acc.uname, newPassword);
+        } else {
+            fprintf(tempFile, "%d,%s,%s\n", acc.rank, acc.uname, acc.pass);
+        }
+    }
+
+    fclose(database);
+    fclose(tempFile);
+
+    remove(USER_DB_PATH);
+    rename(TEMP_USER_DB_PATH, USER_DB_PATH);
+}
+
+void viewAcc() {
+    FILE* database;
+    account acc;
+
+    int max = countLine(USER_DB_PATH);
+    database = fopen(USER_DB_PATH, "r");
+
+    printf(" +----+--------------------+\n");
+    printf(" | ID |      Username      |\n");
+    printf(" +----+--------------------+\n");
+    for (int i = 0; i < max; i++) {
+        fscanf(database, "%d,%[^,],%[^\n]", &acc.rank, acc.uname, acc.pass);
+        printf(" | %-2d | %-18s |\n", i + 1, acc.uname);
+    }
+    printf(" +----+--------------------+\n");
+    fclose(database);
 }

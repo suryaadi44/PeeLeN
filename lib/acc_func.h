@@ -10,6 +10,7 @@ int login();
 void addAcc();
 void delAcc();
 void accPassword();
+void viewAcc();
 
 
 #endif //LOGIN_FUNC_H_

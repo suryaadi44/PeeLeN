@@ -9,19 +9,19 @@ void setting();
 
 int main() {
 	int cek;
-	
+
 	directoryCheck();
 	accCheck();
 
 	clear();
 	header();
 
-	if (session == -1) 
+	if (session == -1)
 		cek = login();
 
-	if (cek) 
+	if (cek)
 		mainMenu();
-	else 
+	else
 		printf("Username atau Password Salah!\n");
 
 	return 0;
@@ -58,11 +58,16 @@ void mainMenu() {
 			setting();
 			break;
 		case 4:
+			session = -1;
+			sessionRank = 0;
+			main();
+			return;
+		case 5:
 			break;
 		default:
 			break;
 		}
-	} while (pil != 4);
+	} while (pil != 5);
 }
 
 void user() {
@@ -163,16 +168,15 @@ void setting() {
 
 		switch (pil) {
 		case 1:
-
+			accPassword();
 			break;
 		case 2:
 			addAcc();
 			break;
 		case 3:
-
+			delAcc();
 			break;
 		case 4:
-
 			break;
 		default:
 			break;
