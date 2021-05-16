@@ -34,4 +34,6 @@ Aplikasi Pengelolaan Data Pengguna Listrik Sederhana Sebagai Final Project Prakt
 >1. Buat Blank Project.
 >2. Tambahkan FPalpro.c ke Project
 >3. Tambah Folder Baru di Project
->4. Tambahkan Semuai Dalam Folder Lib ke Folder Yang Telah Dibuat
+>4. Tambahkan Semua File Dalam Folder Lib ke Folder Yang Telah Dibuat
+>5. Buka Semua File ke Text Editor
+>6. Build lalu Compile dan Run 

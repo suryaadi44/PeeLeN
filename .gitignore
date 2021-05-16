@@ -5,6 +5,10 @@
 *.dev
 *.layout
 
+#vscode
+.vscode/
+*.code-workspace
+
 # Dev C++ Makefile
 *.Win
 

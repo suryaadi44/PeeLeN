@@ -106,7 +106,7 @@ void tx() {
 	do {
 		clear();
 		header();
-		printf(" --> DATA TRANSAKSI");
+		printf(" --> DATA TRANSAKSI\n");
 		printf("==============================================================================\n");
 		printf(" --> 1. Tampilkan Data Penggunaan\n");
 		printf(" --> 2. Tambah Penggunaan\n");
@@ -146,7 +146,7 @@ void setting() {
 	do {
 		clear();
 		header();
-		printf(" --> PENGATURAN");
+		printf(" --> PENGATURAN\n");
 		printf("==============================================================================\n");
 		printf(" --> 1. Ganti Password\n");
 		printf(" --> 2. Buat Akun Baru\n");
