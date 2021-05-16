@@ -16,9 +16,9 @@ void accCheck() {
     FILE* f, * rek;
 
     f = fopen(USER_DB_PATH, "a+");
-    rek = fopen(CUST_DB_PATH, "a+");
+    rek = fopen(CUSTOMER_DB_PATH, "a+");
 
-    int baris = countLine(USER_DB_PATH);
+    int baris = countLine("./db_user/name_pass.csv");
 
     if (baris == 0) {
         fprintf(f, "%d,%s,%s\n", 1, "admin", "admin");

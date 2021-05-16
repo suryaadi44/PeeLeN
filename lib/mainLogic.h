@@ -19,6 +19,7 @@ typedef struct customer {
     char namaDepan[20];
     char namaBelakang[20];
     long usage;
+    float rate;
 } customer;
 
 typedef struct account {
