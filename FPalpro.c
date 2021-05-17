@@ -95,6 +95,7 @@ void user() {
 			break;
 		case 2:
 			addCust();
+			lanjut = pause();
 			break;
 		case 3:
 			editCust();

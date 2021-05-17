@@ -7,7 +7,7 @@ int login();
 void addAcc();
 void delAcc();
 void accPassword();
-void viewAcc();
+void printAcc();
 
 
 #endif 

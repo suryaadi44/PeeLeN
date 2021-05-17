@@ -98,7 +98,7 @@ void delAcc() {
 
     printf(" --> HAPUS AKUN \n");
     printf("==============================================================================\n");
-    viewAcc();
+    printAcc();
     printf("\n Pilih ID Akun yang akan Dihapus : ");
     scanf("%d", &del);
 
@@ -146,7 +146,7 @@ void accPassword() {
         scanf("%[^\n]%*c", newPassword);
         accID = session;
     } else {
-        viewAcc();
+        printAcc();
         printf("\n Pilih ID Akun yang akan Diganti Password : ");
         scanf("%d", &accID);
 
@@ -181,7 +181,7 @@ void accPassword() {
     rename(TEMP_USER_DB_PATH, USER_DB_PATH);
 }
 
-void viewAcc() {
+void printAcc() {
     FILE* database;
     account acc;
 
