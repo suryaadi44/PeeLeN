@@ -55,18 +55,3 @@ void clear() {
 std: system("clear");
 #endif
 }
-
-void price(){
-	FILE*file;
-	file=fopen(TEMP_CUST_DB_PATH,"a+");
-	
-	int baris = countLine(TEMP_CUST_DB_PATH);
-    if (baris == 0){
-        fprintf(file, "1,450,200\n");
-        fprintf(file, "2,900,1400\n");
-        fprintf(file, "3,1300,1600\n");
-        fprintf(file, "4,2200,1900\n");
-        fprintf(file, "5,3100,2300\n");
-    }
-    fclose(file);
-}
