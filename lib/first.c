@@ -23,7 +23,6 @@ void fileCheck() {
     custDB = fopen(CUST_DB_PATH, "a+");
     rate = fopen(RATE_PATH, "a+");
 
-
     int baris = countLine(USER_DB_PATH);
     if (baris == 0) 
         fprintf(userDB, "1,admin,admin\n");
