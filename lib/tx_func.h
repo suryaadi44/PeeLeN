@@ -6,6 +6,6 @@
 void viewUsage();
 void addUsage();
 void payUsage();
-void logTX();
+void logTX(long id, int type, int idr, float kwh, float txKWH);
 
 #endif

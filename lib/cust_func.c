@@ -74,7 +74,7 @@ void addCust() {
     fflush(stdin);
     scanf("%d", &cust.price);
     printf("==============================================================================\n");
-    printf(" Berhasil Menambahkan Pelanggan Baru dengan ID : %ld ", cust.id);
+    printf(" Berhasil Menambahkan Pelanggan Baru dengan ID : %ld \n", cust.id);
     printf("==============================================================================\n");
 
     fprintf(database, "%ld,%s,%s,\"%s\",%s,0.0,%d\n", cust.id, cust.namaDepan, cust.namaBelakang, cust.address, cust.telp, cust.price);

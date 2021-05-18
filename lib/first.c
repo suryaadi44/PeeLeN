@@ -14,14 +14,19 @@ void directoryCheck() {
     if (stat("config", &st) == -1) {
         mkdir("config");
     }
+
+    if (stat("tx_log", &st) == -1) {
+        mkdir("tx_log");
+    }
 }
 
 void fileCheck() {
-    FILE* userDB, *custDB, *rate;
+    FILE* userDB, *custDB, *rate, *log;
 
     userDB = fopen(USER_DB_PATH, "a+");
     custDB = fopen(CUST_DB_PATH, "a+");
     rate = fopen(RATE_PATH, "a+");
+    log = fopen(ALL_LOG_PATH, "a+");
 
     int baris = countLine(USER_DB_PATH);
     if (baris == 0) 
@@ -35,8 +40,14 @@ void fileCheck() {
         fprintf(rate, "4,2200,1900\n");
         fprintf(rate, "5,3100,2300\n");
     }
+
+    baris = countLine(ALL_LOG_PATH);
+    if (baris == 0) {
+        fprintf(log, "No,Waktu,ID,Jenis Transaksi,Jumlah Transaksi,KWH,Total KWH\n");
+    }
         
     fclose(userDB);
     fclose(custDB);
     fclose(rate);
+    fclose(log);
 }
