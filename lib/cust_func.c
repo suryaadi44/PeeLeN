@@ -206,21 +206,3 @@ void delCust() {
     remove(CUST_DB_PATH);
     rename(TEMP_CUST_DB_PATH, CUST_DB_PATH);
 }
-
-void viewRate() {
-    FILE* database;
-    rate rates;
-
-    database = fopen(RATE_PATH, "r");
-    int max = countLine(RATE_PATH);
-
-    printf(" +----+-----------+---------------+\n");
-    printf(" | ID | Batas KWH | Tarif Per-KWH |\n");
-    printf(" +----+-----------+---------------+\n");
-    for (int i = 0; i < max; i++) {
-        fscanf(database, "%d,%d,%d", &rates.id, &rates.limit, &rates.perKWH);
-        printf(" | %-2d | %-8d  |  Rp.%-8d  |\n", rates.id, rates.limit, rates.perKWH);
-    }
-    printf(" +----+-----------+---------------+\n");
-    fclose(database);
-}

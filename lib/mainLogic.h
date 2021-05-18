@@ -38,6 +38,7 @@ typedef struct rate {
 } rate;
 
 void header();
+void viewRate();
 int pause();
 int countLine(char file[]);
 void clear();

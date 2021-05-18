@@ -153,16 +153,17 @@ void tx() {
 }
 
 void setting() {
-	int pil;
+	int pil, lanjut;
 	do {
 		clear();
 		header();
 		printf(" --> PENGATURAN\n");
 		printf("==============================================================================\n");
-		printf(" --> 1. Ganti Password\n");
+		printf(" --> 1. Ubah Password\n");
 		printf(" --> 2. Buat Akun Baru\n");
 		printf(" --> 3. Hapus Akun\n");
-		printf(" --> 4. Kembali\n");
+		printf(" --> 4. Ubah Tarif\n");
+		printf(" --> 5. Kembali\n");
 		printf("==============================================================================\n");
 		printf(" --> Pilih menu : ");
 		scanf("%d", &pil);
@@ -177,11 +178,15 @@ void setting() {
 			break;
 		case 3:
 			delAcc();
+			lanjut = pause();
 			break;
 		case 4:
+			editConfig();
+			break;
+		case 5:
 			break;
 		default:
 			break;
 		}
-	} while (pil != 4);
+	} while (pil != 5);
 }

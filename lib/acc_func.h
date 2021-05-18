@@ -8,6 +8,6 @@ void addAcc();
 void delAcc();
 void accPassword();
 void printAcc();
-
+void editConfig();
 
 #endif 

@@ -137,7 +137,7 @@ void accPassword() {
     clear();
     header();
 
-    printf(" --> GANTI PASSWORD \n");
+    printf(" --> UBAH PASSWORD \n");
     printf("==============================================================================\n");
     if (sessionRank != 1) {
         printf("\n Masukan Password Baru");
@@ -179,6 +179,57 @@ void accPassword() {
 
     remove(USER_DB_PATH);
     rename(TEMP_USER_DB_PATH, USER_DB_PATH);
+}
+
+void editConfig() {
+    FILE* config, * tempFile;
+    rate rates;
+
+    int max = countLine(RATE_PATH);
+    int rateID, newRate;
+
+    config = fopen(RATE_PATH, "r");
+    tempFile = fopen(TEMP_RATE_PATH, "w");
+
+    clear();
+    header();
+
+    if (sessionRank != 1) {
+        printf("Anda tidak memiliki ijin untuk mengakses menu ini");
+        return;
+    }
+
+    printf(" --> UBAH TARIF \n");
+    printf("==============================================================================\n");
+    viewRate();
+    printf("\n Pilih ID Tarif yang akan Diubah : ");
+    fflush(stdin);
+    scanf("%d", &rateID);
+    printf("\n Masukan Tarif                   : ");
+    fflush(stdin);
+    scanf("%d", &newRate);
+    printf("==============================================================================\n");
+    
+    while (rateID < 1 && rateID > max+1) {
+        printf("\n Pilihan Tidak Tersedia");
+        printf(" Pilih ID Tarif yang akan Diubah : ");
+        scanf("%d", &rateID);
+    }
+    rateID-=1;
+    
+    for (int i = 0; i < max; i++) {
+        fscanf(config, "%d,%d,%d", &rates.id, &rates.limit, &rates.perKWH);
+        if (i == rateID) {
+            rates.perKWH = newRate;
+        }
+        fprintf(tempFile, "%d,%d,%d\n", rates.id, rates.limit, rates.perKWH);
+    }
+
+    fclose(config);
+    fclose(tempFile);
+
+    remove(RATE_PATH);
+    rename(TEMP_RATE_PATH, RATE_PATH);
 }
 
 void printAcc() {
