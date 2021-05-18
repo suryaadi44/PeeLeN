@@ -21,7 +21,7 @@ Aplikasi Pengelolaan Data Pengguna Listrik Sederhana Sebagai Final Project Prakt
 >Jalankan perintah berikut pada terminal :
 >
 >```
->cd "d:\For School\Kuliah\Semester II\Praktikum Algoritma & Pemrograman\PeeLeN\"  ; if ($?) { gcc "FPalpro.c" "lib/first.c" "lib/acc_func.c" "lib/cust_func.c" "lib/mainLogic.c" -o "FPalpro" } ; if ($?) { & ".\FPalpro" }
+>cd "d:\For School\Kuliah\Semester II\Praktikum Algoritma & Pemrograman\PeeLeN\"  ; if ($?) { gcc "FPalpro.c" "lib/first.c" "lib/acc_func.c" "lib/cust_func.c" "lib/tx_func.c" "lib/mainLogic.c" -o "FPalpro" } ; if ($?) { & ".\FPalpro" }
 >```
 >
 >*-Ubah chnage directory menjadi directory menyimpan code.*

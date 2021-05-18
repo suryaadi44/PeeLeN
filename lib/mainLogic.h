@@ -12,6 +12,7 @@
 #define TEMP_CUST_DB_PATH "./db_cust/temp.csv"
 #define RATE_PATH "./config/config.csv"
 #define TEMP_RATE_PATH "./config/temp.csv"
+#define ALL_LOG_PATH "./tx_log/tx_log.csv"
 
 struct tm* waktu;
 

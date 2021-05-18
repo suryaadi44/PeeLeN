@@ -2,6 +2,7 @@
 #include "lib/mainLogic.h"
 #include "lib/acc_func.h"
 #include "lib/cust_func.h"
+#include "lib/tx_func.h"
 
 void mainMenu();
 void user();
@@ -42,7 +43,8 @@ void mainMenu() {
 		printf(" --> 1. Pelanggan\n");
 		printf(" --> 2. Transaksi\n");
 		printf(" --> 3. Pengaturan\n");
-		printf(" --> 4. Keluar\n");
+		printf(" --> 4. Log Out\n");
+		printf(" --> 5. Keluar\n");
 		printf("==============================================================================\n");
 		printf(" --> Pilih menu : ");
 		scanf("%d", &pil);
@@ -121,9 +123,8 @@ void tx() {
 		printf("==============================================================================\n");
 		printf(" --> 1. Tampilkan Data Penggunaan\n");
 		printf(" --> 2. Tambah Penggunaan\n");
-		printf(" --> 3. Status Tagihan\n");
-		printf(" --> 4. Pembayaran Tagihan\n");
-		printf(" --> 5. Kembali\n");
+		printf(" --> 3. Pembayaran Tagihan\n");
+		printf(" --> 4. Kembali\n");
 		printf("==============================================================================\n");
 		printf(" --> Pilih menu : ");
 		scanf("%d", &pil);
@@ -131,25 +132,22 @@ void tx() {
 
 		switch (pil) {
 		case 1:
-
+			viewUsage();
 			lanjut = pause();
 			break;
 		case 2:
-
+			addUsage();
 			break;
 		case 3:
-
+			payUsage();
 			lanjut = pause();
 			break;
 		case 4:
-
-			break;
-		case 5:
 			break;
 		default:
 			break;
 		}
-	} while (pil != 5 && lanjut == 1);
+	} while (pil != 4 && lanjut == 1);
 }
 
 void setting() {
