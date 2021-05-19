@@ -47,7 +47,7 @@ void addCust() {
     if (max == 0) {
         cust.id = 1000000;
     } else {
-        for (int i = 0; i < max; i++) 
+        for (int i = 0; i < max; i++)
             fscanf(database, "%ld,%[^,],%[^,],\"%[^\"]\",%[^,],%f,%d\n", &cust.id, cust.namaDepan, cust.namaBelakang, cust.address, cust.telp, &cust.usage, &cust.price);
         cust.id += 1;
     }
@@ -143,7 +143,14 @@ void editCust() {
         fflush(stdin);
         scanf("%[^\n]%*c", newData.telp);
         break;
+    case 4:
+        viewRate();
+        printf(" Tarif         : ");
+        fflush(stdin);
+        scanf("%d", &newData.price);
+        break;
     }
+
     printf("==============================================================================\n");
 
 
@@ -159,6 +166,9 @@ void editCust() {
                 break;
             case 3:
                 fprintf(tempFile, "%ld,%s,%s,\"%s\",%s,%f,%d\n", cust.id, cust.namaDepan, cust.namaBelakang, cust.address, newData.telp, cust.usage, cust.price);
+                break;
+            case 4:
+                fprintf(tempFile, "%ld,%s,%s,\"%s\",%s,%f,%d\n", cust.id, cust.namaDepan, cust.namaBelakang, cust.address, cust.telp, cust.usage, newData.price);
                 break;
             }
         } else {
