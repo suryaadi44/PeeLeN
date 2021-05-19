@@ -32,7 +32,7 @@ void viewRate() {
     int max = countLine(RATE_PATH);
 
     printf(" +----+-----------+---------------+\n");
-    printf(" | ID | Batas KWH | Tarif Per-KWH |\n");
+    printf(" | ID | Batas VA  | Tarif Per-KWH |\n");
     printf(" +----+-----------+---------------+\n");
     for (int i = 0; i < max; i++) {
         fscanf(database, "%d,%d,%d", &rates.id, &rates.limit, &rates.perKWH);
