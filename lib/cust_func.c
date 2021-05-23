@@ -113,7 +113,7 @@ void editCust() {
     fflush(stdin);
     scanf("%d", &pil);
 
-    while (pil > 4 && pil < 1) {
+    while (pil > 4 || pil < 1) {
         printf(" Pilihan Tidak Tersedia\n");
         printf(" Masukan Kembali : ");
         fflush(stdin);

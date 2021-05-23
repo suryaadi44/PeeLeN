@@ -102,7 +102,7 @@ void delAcc() {
     printf("\n Pilih ID Akun yang akan Dihapus : ");
     scanf("%d", &del);
 
-    while (del < 1 && del > max) {
+    while (del < 1 || del > max) {
         printf("\n Pilihan Tidak Tersedia");
         printf("\n Pilih ID Akun yang akan Dihapus : ");
         scanf("%d", &del);
@@ -140,38 +140,31 @@ void accPassword() {
     printf(" --> UBAH PASSWORD \n");
     printf("==============================================================================\n");
     if (sessionRank != 1) {
-        printf("\n Masukan Password Baru");
-        printf("\n Password : ");
-        scanf("\n");
-        scanf("%[^\n]%*c", newPassword);
         accID = session;
     } else {
         printAcc();
         printf("\n Pilih ID Akun yang akan Diganti Password : ");
         scanf("%d", &accID);
 
-        while (accID < 1 && accID > max) {
+        while (accID < 1 || accID > max) {
             printf("\n Pilihan Tidak Tersedia");
-            printf("\n Pilih ID Akun yang akan Dihapus : ");
+            printf("\n Pilih ID Akun yang akan Diganti Password : ");
             scanf("%d", &accID);
         }
         accID -= 1;
-
-        printf("\n Masukan Password Baru");
-        printf("\n Password : ");
-        scanf("\n");
-        scanf("%[^\n]%*c", newPassword);
-
     }
 
+    printf("\n Masukan Password Baru");
+    printf("\n Password : ");
+    scanf("\n");
+    scanf("%[^\n]%*c", newPassword);
 
     for (int i = 0; i < max; i++) {
         fscanf(database, "%d,%[^,],%[^\n]", &acc.rank, acc.uname, acc.pass);
-        if (i == accID) {
+        if (i == accID)
             fprintf(tempFile, "%d,%s,%s\n", acc.rank, acc.uname, newPassword);
-        } else {
+        else
             fprintf(tempFile, "%d,%s,%s\n", acc.rank, acc.uname, acc.pass);
-        }
     }
 
     fclose(database);
@@ -209,19 +202,18 @@ void editConfig() {
     fflush(stdin);
     scanf("%d", &newRate);
     printf("==============================================================================\n");
-    
-    while (rateID < 1 && rateID > max+1) {
+
+    while (rateID < 1 || rateID > max + 1) {
         printf("\n Pilihan Tidak Tersedia");
         printf(" Pilih ID Tarif yang akan Diubah : ");
         scanf("%d", &rateID);
     }
-    rateID-=1;
-    
+    rateID -= 1;
+
     for (int i = 0; i < max; i++) {
         fscanf(config, "%d,%d,%d", &rates.id, &rates.limit, &rates.perKWH);
-        if (i == rateID) {
+        if (i == rateID) 
             rates.perKWH = newRate;
-        }
         fprintf(tempFile, "%d,%d,%d\n", rates.id, rates.limit, rates.perKWH);
     }
 
