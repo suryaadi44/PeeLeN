@@ -65,8 +65,6 @@ void mainMenu() {
 			sessionRank = 0;
 			main();
 			return;
-		case 5:
-			break;
 		default:
 			break;
 		}
@@ -105,8 +103,6 @@ void user() {
 		case 4:
 			delCust();
 			break;
-		case 5:
-			break;
 		default:
 			break;
 		}
@@ -142,8 +138,6 @@ void tx() {
 			payUsage();
 			lanjut = pause();
 			break;
-		case 4:
-			break;
 		default:
 			break;
 		}
@@ -151,7 +145,7 @@ void tx() {
 }
 
 void setting() {
-	int pil, lanjut;
+	int pil, lanjut = 1;
 	do {
 		clear();
 		header();
@@ -181,10 +175,8 @@ void setting() {
 		case 4:
 			editConfig();
 			break;
-		case 5:
-			break;
 		default:
 			break;
 		}
-	} while (pil != 5);
+	} while (pil != 5 && lanjut == 1);
 }
