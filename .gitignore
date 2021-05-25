@@ -1,3 +1,7 @@
+#laporan Mentah
+*.docx
+*.doc
+
 #Testing and Debug
 test.c
 

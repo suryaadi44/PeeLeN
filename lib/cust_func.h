@@ -4,7 +4,6 @@
 #include "mainLogic.h"
 
 void viewCust();
-//void printCust();
 void addCust();
 void editCust();
 void delCust();
