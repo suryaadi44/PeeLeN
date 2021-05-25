@@ -12,7 +12,16 @@
 ```
 
 ---
-Aplikasi Pengelolaan Data Pengguna Listrik Sederhana Sebagai Final Project Praktikum Algoritma dan Pemrograman Semester 2.
+
+Aplikasi Pengelolaan Data Pengguna Listrik Sederhana Berbasis CLI Sebagai Final Project Praktikum Algoritma dan Pemrograman Semester 2.
+
+By :  
+- I Komang Surya Adinandika (2008561040)  
+- Muhammad Luqman Aristio (2008561022)  
+- Made Yosfin Saputra (2008561023)  
+- Ira Arituddiniyah (2008561027)  
+
+---
 
 ## **Cara Menjalankan Program**
 
@@ -37,3 +46,13 @@ Aplikasi Pengelolaan Data Pengguna Listrik Sederhana Sebagai Final Project Prakt
 >4. Tambahkan Semua File Dalam Folder Lib ke Folder Yang Telah Dibuat
 >5. Buka Semua File ke Text Editor
 >6. Build lalu Compile dan Run 
+
+---
+
+## Tambahan 
+- Semua folder dan file yang dibutuhkan pertama kali akan di generate secara otomatis.
+- Folder config berisi konfigurasi harga listrik sesuai rating VA pelanggan.
+- Fodler db_cust berisi database pelanggan.
+- Folder db_user berisi database pengguna program.
+- Folder tx_log berisi database transaksi dari masing masing pelanggan.
+- Folder lib berisi library dari fungsi yang akan digunakan.
