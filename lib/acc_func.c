@@ -109,8 +109,8 @@ void delAcc() {
     }
 
     for (int i = 0; i < max; i++) {
+        fscanf(database, "%d,%[^,],%[^\n]", &acc.rank, acc.uname, acc.pass);
         if (i != (del - 1)) {
-            fscanf(database, "%d,%[^,],%[^\n]", &acc.rank, acc.uname, acc.pass);
             fprintf(tempFile, "%d,%s,%s\n", acc.rank, acc.uname, acc.pass);
         }
     }
@@ -212,7 +212,7 @@ void editConfig() {
 
     for (int i = 0; i < max; i++) {
         fscanf(config, "%d,%d,%d", &rates.id, &rates.limit, &rates.perKWH);
-        if (i == rateID) 
+        if (i == rateID)
             rates.perKWH = newRate;
         fprintf(tempFile, "%d,%d,%d\n", rates.id, rates.limit, rates.perKWH);
     }
