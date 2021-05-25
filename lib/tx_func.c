@@ -152,17 +152,8 @@ void logTX(long id, int type, int idr,float txKWH, float kwh) {
     time(&mentah);
     waktu = localtime(&mentah);
 
-    char convert[8];
-    char* format = ".csv";
-    char* dir = "./tx_log/";
-    snprintf(convert, 8, "%ld", id);
-
-    int mem = strlen(convert) + strlen(format) + strlen(dir);
-    char file[mem];
-
-    strcpy(file, dir);
-    strcat(file, convert);
-    strcat(file, format);
+    char file[22];
+    snprintf(file, 21, "./tx_log/%ld.csv", id);
 
     log = fopen(ALL_LOG_PATH, "a");
     logAcc = fopen(file, "a");
